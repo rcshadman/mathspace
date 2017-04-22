@@ -10,7 +10,7 @@ Investigate how your program scales for moderately large numbers, such as n=1000
 Solution
 -----------------------------------
 
-I  don't remember all the probability's formulas Instead of googling it,lets derive equation using a crude method of mathematical induction.
+Instead of googling  probability's formulas,lets derive our equation using a crude method of mathematical induction.
 
 So let's start with the 2 sided die,
 
