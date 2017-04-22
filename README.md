@@ -28,6 +28,6 @@ Access the app::
 
     http://127.0.0.1:8000/dice
 
-To run the script alone for debugging (Django testing not included)::
+To run the script alone for debugging (needs few lines of code to uncommented)::
 	
     python prob.py
