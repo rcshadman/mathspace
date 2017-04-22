@@ -48,10 +48,10 @@ class Probability():
 	def calculate_probability(self,adjustment=0):
 		precision = 8
 		numerator = self.factorial(self.n-1)
-		denomenator = self.expo(self.n,self.n-1) 
+		denominator = self.expo(self.n,self.n-1) 
 		
 		if not self.isTooBig:
-			result = (numerator/denomenator)
+			result = (numerator/denominator)
 			# ipdb.set_trace()
 			return format(result,'.90f')
 		else:
@@ -63,18 +63,18 @@ class Probability():
 				# cheap hack to get around datatype limitation
 				numerator = float(str(numerator)[:-normalize_factor])
 			
-			# stronger truncation of digits from denomenator
+			# stronger truncation of digits from denominator
 			adjustment = adjust()
 			normalize_factor +=adjustment
 			
 			try:
-				denomenator = denomenator / 10**(normalize_factor)
+				denominator = denominator / 10**(normalize_factor)
 			except:
 				# cheap hack to get around datatype limitation
-				denomenator = long(str(denomenator)[:-normalize_factor])
+				denominator = long(str(denominator)[:-normalize_factor])
 			
 			try:
-				result = (numerator/denomenator)
+				result = (numerator/denominator)
 			except:
 				return float(0)
 
