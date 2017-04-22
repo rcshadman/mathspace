@@ -14,15 +14,15 @@ Instead of googling  probability's formulas,lets derive our equation using a cru
 
 So let's start with the 2 sided die,
 
-side = 2 ie {1,2}
+	side = 2 ie {1,2}
 
-number of rolls = 2 
+	number of rolls = 2 
 
-all possibilities or samples = 2^2 =4 ie {11,12,21,22}
+	all possibilities or samples = 2^2 =4 ie {11,12,21,22}
 
-number of ways dinstinct face can appear = in 2 ways = 2! = 2 ie {12,21}
+	number of ways dinstinct face can appear = in 2 ways = 2! = 2 ie {12,21}
 
-Probability = 2!/2^2
+	Probability = 2!/2^2
 
 
 
@@ -36,17 +36,17 @@ Probability = 2!/2^2
 side = 3 
 ---------
 
-ie {1,2,3}
+	ie {1,2,3}
 
-number of rolls = 3 
+	number of rolls = 3 
 
-all possibilities or samples = 3^3 =27 
+	all possibilities or samples = 3^3 =27 
 
-ie [ 111,112,113, 121,122,123, 131,132,133, 211,212,213, 221,222,223, 231,232,233, 311,312,313, 321,322,323, 331,332,333 ] 
+	ie [ 111,112,113, 121,122,123, 131,132,133, 211,212,213, 221,222,223, 231,232,233, 311,312,313, 321,322,323, 331,332,333 ] 
 
-fnumber of ways dinstinct face can appear 3! = 6 ie [ 123,132,213,231,312,321 ] 
+	fnumber of ways dinstinct face can appear 3! = 6 ie [ 123,132,213,231,312,321 ] 
 
-probability = 3!/3^3
+	probability = 3!/3^3
 
 
 
@@ -60,16 +60,16 @@ probability = 3!/3^3
 side = 4 
 ----------
 
-number of rolls = 4
+	number of rolls = 4
 
-all possibilities or samples = 4^4 = 16 
+	all possibilities or samples = 4^4 = 16 
 
-number of ways dinstinct face can appear = 4! = 24 
+	number of ways dinstinct face can appear = 4! = 24 
 
-ie [ 1234,1243,1324,1342,1423,1432, 2134,2143,2314,2341,2413,2431, 3124,3142,3214,3241,3412,3421 ..... ] 
+	ie [ 1234,1243,1324,1342,1423,1432, 2134,2143,2314,2341,2413,2431, 3124,3142,3214,3241,3412,3421 ..... ] 
 
 
-probability = 4!/4^4
+	probability = 4!/4^4
 
 
 
@@ -81,13 +81,13 @@ probability = 4!/4^4
 side = 5 
 ---------
 
-number of rolls = 5 
+	number of rolls = 5 
 
-sample = 5^5 = 25 
+	sample = 5^5 = 25 
 
-number of ways dinstinct face can appear = 5! 
+	number of ways dinstinct face can appear = 5! 
 
-probability = 5!/5^5
+	probability = 5!/5^5
 
 
 
@@ -104,15 +104,15 @@ sides = n
 ----------
 
 
-number of rolls = n 
+	number of rolls = n 
 
-sample = n^n 
+	sample = n^n 
 
-number of ways dinstinct face can appear = n! 
+	number of ways dinstinct face can appear = n! 
 
-probability = n!/n^n
+	probability = n!/n^n
 
-P(e) = n!/n^n = n(n-1)!/n(n^n-1) = (n-1)!/(n^n-1)
+	P(e) = n!/n^n = n(n-1)!/n(n^n-1) = (n-1)!/(n^n-1)
 
 
 
@@ -124,7 +124,7 @@ P(e) = n!/n^n = n(n-1)!/n(n^n-1) = (n-1)!/(n^n-1)
 Formulae
 ----------
 
-P(E) = (n-1)! / n^n-1
+	P(E) = (n-1)! / n^n-1
 
 
 The Real Problems
@@ -141,11 +141,14 @@ Do we really need to divide the such huge numbers?
 
 FACT 1
 -------
-1/1000 is same as 523/523000  and 523000/523000000
+
+	1/1000 is same as 523/523000  and 523000/523000000
 
 FACT 2
 --------
-625/7869900768687 = ~ = 62 / 786990076868 = ~ =  6 / 78699007686 
+	
+	625/7869900768687 = ~ = 62 / 786990076868 = ~ =  6 / 78699007686 
+
 These are approximately equal.
 
 We will use this analogy soon,
@@ -159,10 +162,10 @@ When n = 15 in p(E) = (n-1)! / n^(n-1)
 Standard approach
 ------------------
 
-numerator = (n-1)! = 14! = 87178291200 
+	numerator = (n-1)! = 14! = 87178291200 
 
 
-denominator = n^(n-1) = 15^14 = 29192926025390625
+	denominator = n^(n-1) = 15^14 = 29192926025390625
 
 
 p(E)
@@ -175,15 +178,16 @@ p(E)
 Digit Truncation Approach
 --------------------------
 
-numerator = (n-1)! = 14! = 871782 
+	numerator = (n-1)! = 14! = 871782 
 
 
-denominator = n^(n-1) = 15^14 = 291929260253 
+	denominator = n^(n-1) = 15^14 = 291929260253 
 
 
 P(E)
 -----
-0.000002986278248519766919354123668739475760958157479763031005859375 
+	
+	0.000002986278248519766919354123668739475760958157479763031005859375 
 
 
 we still get exactly correct value uptil 10 decimal positions, ie ( 0.0000029862 ) 
