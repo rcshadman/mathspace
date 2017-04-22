@@ -32,7 +32,7 @@ class Probability():
 			return n * self.factorial(n - 1)
 
 	def expo(self,n,e):
-		res = e**n
+		res = n**e
 		return res
 		
 
