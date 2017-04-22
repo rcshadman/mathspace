@@ -1,6 +1,6 @@
-I would like to attempt the second question mainly because, 1st and 3rd are too frequently asked problem. 
+I would like to attempt the second question mainly because, 1st and 3rd are too frequently asked problems. 
 1st problem can solved using Dynamic programming (although doesnt cover corner cases) or recursive DFS method (lenghty).
-2nd problem , i couldnt figure the out function being used to generate the values for string.
+2nd problem , i couldnt figure out the function being used to generate the values for string.
 
 B. Write a program that calculates the probability for an n-sided die labelled with integers from 1 to n, to roll all the numbers 
 {1, ..., n}, in any order if the die is thrown n times.
