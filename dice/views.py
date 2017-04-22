@@ -5,13 +5,19 @@ import ipdb
 
 
 def dice(request):
+	title = "DICE PROBABILITY CALCULATOR"
 	if request.method == 'GET':
-		context = { "title":"DICE ROLLER"}
+		context = { "title":title }
 		return render(request, "index.html",context)
 	
 	if request.method == 'POST':
 		sides = long(request.POST['sides'])
-		probability = prob.Probability(sides=sides)
-		res = str(probability.calculate_probability())
-		context = { "result" : res,"title":"DICE ROLLER"}
-		return render(request, "index.html", context)
+		try:
+			probability = prob.Probability(sides=sides)
+			res = str(probability.calculate_probability())
+			context = { "result" : res, "title":title}
+			return render(request, "index.html", context)
+
+		except Exception as e:
+			context = {error : "index"}
+			return render(request, "index.html", context)

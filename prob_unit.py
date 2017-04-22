@@ -84,7 +84,7 @@ class Probability():
 def cal(n):
 	obj = Probability(n)
 	res = obj.calculate_probability()
-	print 'number : {}      -------        result : {}'.format(n,res)
+	print 'sides : {}      -------        probability : {}'.format(n,res)
 
 if __name__ == '__main__':
 	n = long(raw_input('enter range \n'))

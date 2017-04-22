@@ -5,18 +5,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{% block title %} demo{% endblock %}</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.map"></script>
-        <!-- {% static "/css/style.css" %} /static/css/style.css -->
-        <!-- Latest compiled and minified CSS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <!-- Optional theme -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
-        <link rel= "stylesheet" href='{% static "css/style.css" %} '>
-        <script>
-		$(document).ready(function(){});
-		</script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <script src='{% static "js/dice.js" %}' type="text/JavaScript"></script>
+
+       
 
     </head>
 <body style="background-color:grey">
@@ -29,10 +26,14 @@
 					{{title}}  
 					</h1>
 				</div>
-					
+					<div class="alert-info" role="info">
+						<div style="text-align:center" id="info">
+							<i>Info: Calculate button appears only on correct input.<i>
+						</div>
+					</div>
 					<div class="alert-warning" role="alert"><div style="text-align:center" id="message"></div></div>
 					
-					<form class="form-horizontal" action="./dice" method="POST">
+					<form id="Calculate" class="form-horizontal" method="POST" action="./dice">
 					{% csrf_token %}
 					<div class="form-group row" style="margin-top:30px">
 						<div class="col-md-offset-4 col-md-2">
@@ -42,13 +43,15 @@
 								</label>
 							</h4>
 						</div>
-						<div class=" col-md-4"><input type="search" class="form-control" name="sides" placeholder="range 1 - 8800"></div>
+						<div class=" col-md-4">
+							<input id="sides" class="form-control" name="sides" placeholder="range 1 - 8800 !!" type='number' max='8800' >
+						</div>
 					</div>	
 
 
 					<div class="form-group row" >
 						<div class="col-md-offset-6 col-md-4">
-							<button style="color:black" type="submit" class="btn btn-warning">Calculate</button>
+							<button id="push" style="color:black" class="btn btn-warning" type="submit">Calculate</button>
 						</div>
 						
 					</div>	
@@ -86,8 +89,5 @@
     
     
      
-
-    <!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>  
 </body>
 </html>
