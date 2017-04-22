@@ -52,7 +52,7 @@ class Probability():
 		
 		if not self.isTooBig:
 			result = (numerator/denomenator)
-			ipdb.set_trace()
+			# ipdb.set_trace()
 			return format(result,'.90f')
 		else:
 			normalize_factor = len(str(numerator))-precision
