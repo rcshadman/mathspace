@@ -53,19 +53,19 @@ probability = n!/n^n
 
 P(e) = n!/n^n = n(n-1)!/n(n^n-1) = (n-1)!/(n^n-1)
 
-#Formulae
+Formulae
 ----------
 
 P(E) = (n-1)! / n^n-1
 
 
-#The Real Problems
-
-Problem 
+The Real Problems
+-----------------------------------
 
 Implementing the equation will result into memory overflow, or buffer overflow because primitive datatypes of the language often has limitation (max range). More over floating points operations are extremely exahustive.
 
-#Solution
+Solution
+-----------------------------------
 
 Lets approach the problem from a layman's perspective.
 
@@ -84,8 +84,10 @@ numerator = (n-1)! = 14! = 87178291200
 denominator = n^(n-1) = 15^14 = 29192926025390625
 --------------------------------------------------
 
-p(E) = 0.0000029862813725549966110419351783544783529578126035630702972412109375
----------------------------------------------------------------------------------
+p(E) 
+-----
+0.0000029862813725549966110419351783544783529578126035630702972412109375
+
 
 So do we need such high precision? if we just consider first 100 decimal places, we have fairly correct answer.
 To verify our approach, lets truncate just 5 digits of decimal digits from the numnerator and denominator and check it makes a signification difference to the result. we will call this 'normalizing_factor'
@@ -96,8 +98,10 @@ numerator = (n-1)! = 14! = 871782
 denominator = n^(n-1) = 15^14 = 291929260253 
 ---------------------------------------------
 
-P(E) = 0.000002986278248519766919354123668739475760958157479763031005859375 
------------------------------------------------------------------------------
+P(E)
+-----
+0.000002986278248519766919354123668739475760958157479763031005859375 
+
 
 we still get exactly correct value uptil 10 decimal positions, ie ( 0.0000029862 ) 
 If we round off the both values at 11th position, we will have exact same answer.
