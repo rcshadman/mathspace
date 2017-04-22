@@ -188,15 +188,17 @@ P(E)
 
 we still get exactly correct value uptil 10 decimal positions, ie ( 0.0000029862 ) 
 If we round off the both values at 11th position, we will have exact same answer.
-we escape the memory limitation at the cost of precision.
+we managed to escape the memory limitation at the cost of precision.
 
 I have considered 8 digit precision.
-First 8 digits of numerator are kept and removed the remaining. ie (no of digits in numerator - 8)digits =>normalizing_factor. In denominator we have removed (no of digits in numerator - 8)digits from right.
+First 8 digits of numerator are kept and the remaining are removed. ie (no of digits in numerator - 8)digits =>normalizing_factor. 
+
+In denominator we have removed (no of digits in numerator - 8)digits from right.
 As the value of n grows bigger, our denominator grows exponentially and our normalizing factor isnt sufficient to deal with buffer-overflow problem. There we introduce the an adjustment number to furthur increase normalizing digits.
 
 
-This method might not be mathematically absolutely accurate to max precision but will give us a rough estimate of
-significant digits in the answer
+This method might not be mathematically accurate but will give us a rough estimate answer with
+significant digits.
 
 
 Conclusion
