@@ -148,29 +148,38 @@ FACT 2
 625/7869900768687 = ~ = 62 / 786990076868 = ~ =  6 / 78699007686 
 These are approximately equal.
 
-
-
-Using this analogy, when n = 15 in p(E) = (n-1)! / n^(n-1)
-
-numerator = (n-1)! = 14! = 87178291200 
----------------------------------------
-
-denominator = n^(n-1) = 15^14 = 29192926025390625
---------------------------------------------------
-
-p(E) 
------
-0.0000029862813725549966110419351783544783529578126035630702972412109375
-
+We will use this analogy soon,
 
 So do we need such high precision? if we just consider first 100 decimal places, we have fairly correct answer.
 To verify our approach, lets truncate just 5 digits of decimal digits from the numnerator and denominator and check it makes a signification difference to the result. we will call this 'normalizing_factor'
 
+
+When n = 15 in p(E) = (n-1)! / n^(n-1)
+
+Standard approach
+------------------
+
+numerator = (n-1)! = 14! = 87178291200 
+
+
+denominator = n^(n-1) = 15^14 = 29192926025390625
+
+
+p(E)
+------
+
+0.0000029862813725549966110419351783544783529578126035630702972412109375
+
+
+
+Digit Truncation Approach
+--------------------------
+
 numerator = (n-1)! = 14! = 871782 
------------------------------------
+
 
 denominator = n^(n-1) = 15^14 = 291929260253 
----------------------------------------------
+
 
 P(E)
 -----
@@ -190,14 +199,14 @@ This method might not be mathematically absolutely accurate to max precision but
 significant digits in the answer
 
 
-#Conclusion
+Conclusion
 -----------
 
 So is this approach correct ? I am not sure, but if a small hack can save time and effort,
 I would use till it cracks.
 
 
-#Comment
+Comment
 ---------
 
 I have chosen second question mainly because, 1st and 3rd are too frequently asked problems. 
