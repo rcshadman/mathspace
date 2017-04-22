@@ -139,10 +139,16 @@ Lets approach the problem from a layman's perspective.
 
 Do we really need to divide the such huge numbers?
 
+FACT 1
+-------
 1/1000 is same as 523/523000  and 523000/523000000
 
+FACT 2
+--------
 625/7869900768687 = ~ = 62 / 786990076868 = ~ =  6 / 78699007686 
 These are approximately equal.
+
+
 
 Using this analogy, when n = 15 in p(E) = (n-1)! / n^(n-1)
 
