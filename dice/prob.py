@@ -17,7 +17,6 @@ class Probability():
 		return self._n
 
 	def corner_case(self,sides):
-		# ipdb.set_trace()
 		if sides > 30L:
 			self.isTooBig = True
 		if all([sides==None,sides<=0L,sides=='',sides>8800L]):
@@ -32,9 +31,7 @@ class Probability():
 			return n * self.factorial(n - 1)
 
 	def expo(self,n,e):
-		# ipdb.set_trace()
 		res = e**n
-		# res = Decimal(int(n))**int(e)
 		return res
 		
 
@@ -47,9 +44,7 @@ class Probability():
 			result = (numerator/denomenator)
 			return format(result,'.90f')
 		else:
-			de = len(str(denomenator))-precision
-			nu = len(str(numerator))-precision
-			normalize_factor = de if nu > de else nu
+			normalize_factor = len(str(numerator))-precision
 			try:
 				numerator = round(numerator/10**(normalize_factor))
 			except:
@@ -76,7 +71,6 @@ class Probability():
 			except:
 				return float(0)
 
-			# ipdb.set_trace()
 			return result
 
 
