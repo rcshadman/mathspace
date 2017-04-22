@@ -8,7 +8,7 @@ class Probability():
 		self.isTooBig = False
 		if not self.corner_case(sides):
 			self._n = sides
-			# self.calculate_probability()
+			self.calculate_probability()
 			
 		else:
 			return 'INPUT NOT VALID'
@@ -81,14 +81,14 @@ class Probability():
 			return result
 
 
-# def cal(n):
-# 	obj = Probability(n)
-# 	res = obj.calculate_probability()
-# 	print 'number : {}      -------        result : {}'.format(n,res)
+def cal(n):
+	obj = Probability(n)
+	res = obj.calculate_probability()
+	print 'number : {}      -------        result : {}'.format(n,res)
 
-# if __name__ == '__main__':
-# 	n = long(raw_input('enter range \n'))
-# 	map(cal,[i for i in range(8800,n+1)])
+if __name__ == '__main__':
+	n = long(raw_input('enter range \n'))
+	map(cal,[i for i in range(1,n+1)])
 
 
 

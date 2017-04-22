@@ -7,27 +7,27 @@ Please follow the guide to install the project
 Running the project
 ===================
 
-Clone the project::
+Clone the project
 
 	git clone https://github.com/rcshadman/mathspace.git
 
-Install requirements::
+Install requirements
 
     pip install -r requirement.txt
 
-Make migrations and migrate::
+Make migrations and migrate
 
     python manage.py makemigrations
     python manage.py migrate
 
-Run Server::
+Run Server
 	
 	python manage.py runserver
 
-Access the app::
+Access the app
 
     http://127.0.0.1:8000/dice
 
-To run the script alone for debugging (needs few lines of code to uncommented)::
+To run the algorithm on console
 	
-    python prob.py
+    python prob_unit.py
