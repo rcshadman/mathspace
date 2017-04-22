@@ -1,15 +1,14 @@
-I would like to attempt the second question mainly because, 1st and 3rd are too frequently asked problems. 
-1st problem can solved using Dynamic programming (although doesnt cover corner cases) or recursive DFS method (lenghty).
-2nd problem , i couldnt figure out the function being used to generate the values for string.
-
+Question
+-----------------------------------
 B. Write a program that calculates the probability for an n-sided die labelled with integers from 1 to n, to roll all the numbers 
 {1, ..., n}, in any order if the die is thrown n times.
 
 e.g. A tetrahedral die can be made from four equilateral triangles. If the sides are labelled 1, 2, 3 and 4, what is the probability of throwing the die four times and getting {1, 2, 3, 4} in any order?
 
 Investigate how your program scales for moderately large numbers, such as n=1000.
------------------------------------
-ANSWER
+
+
+Solution
 -----------------------------------
 
 I definetiely dont remember all the probability formalaes 
@@ -54,7 +53,74 @@ probability = n!/n^n
 
 P(e) = n!/n^n = n(n-1)!/n(n^n-1) = (n-1)!/(n^n-1)
 
-P(E) = (n-1)! / n^n-1
+Formulae      P(E) = (n-1)! / n^n-1 ::
+
+
+
+The Actual Problem ::
+
+Problem 1 ::
+
+Implementing the equation will result into memory overflow, or buffer overflow because premitive datatypes of the 
+language often has limitation (max range)
+
+Problem 2 ::
+
+Floating point number arithematics is very cpu exhausting as decimial precision increases.
+
+Solution::
+
+Lets approach the problem from a layman's prospective.
+
+Do we really need to divide the such huge numbers? ::
+
+1/1000 is same as 523/523000  and 523000/523000000
+
+625/7869900768687 = ~ = 62 / 786990076868 = ~ =  6 / 78699007686 
+These are approximately equal.
+
+Using this analogy, when n = 15 in p(E) = (n-1)! / n^(n-1)
+
+numerator = (n-1)! = 14! = 87178291200 ::
+
+denomenator = n^(n-1) = 15^14 = 29192926025390625L ::
+
+p(E) = 0.0000029862813725549966110419351783544783529578126035630702972412109375 ::
+
+So do we need such high precision? if we just consider first 100 decimal places, we have fairly correct answer.
+To verify our approach, lets truncate just 5 digits of decimal digits from the numnerator and denomenator and check it makes a signification difference to the result. we will call this 'normalizing_factor'
+
+numerator = (n-1)! = 14! = 871782 ::
+
+denomenator = n^(n-1) = 15^14 = 291929260253 ::
+
+P(E) = 0.000002986278248519766919354123668739475760958157479763031005859375 ::
+
+we still get exactly correct value uptil 10 decimal positions, ie ( 0.0000029862 ) ::
+If we round off the both values at 11th position, we will have exact same answer.
+we escape the memory limitation at the cost of precision.
+
+I have considered 8 digit precision.
+First 8 digits of numerator are kept and removed the remaining. ie (no of digits in numerator - 8)digits =>normalizing_factor. In denomenator we have removed (no of digits in numerator - 8)digits from right.
+As the value of n grows bigger, our denomenator grows exponentially and our normalizing factor isnt sufficient to deal with buffer-overflow problem. There we introduce the an adjustment number to furthur increase normalizing digits.
+
+
+This method might not be mathematically absolutely accurate to max precision but will give us a rough estimate of
+significant digits in the answer
+
+
+#Conclusion
+So is this approach correct ? I am not sure, but if a small hack can save time and effort,
+I would use till it cracks.
+
+
+#Comment
+I have chosen second question mainly because, 1st and 3rd are too frequently asked problems. 
+1st problem can solved using Dynamic programming (although doesnt cover corner cases) or recursive DFS method (lenghty).
+2nd problem , I couldnt figure out the function being used to generate the values for string.
+
+
+
 
 
 

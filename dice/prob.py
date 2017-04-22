@@ -35,6 +35,15 @@ class Probability():
 		res = n**e
 		return res
 		
+	def adjust(self,):
+		if self.n <= 900L:
+			return int(self.n/10)
+		elif self.n >= 900L and self.n < 1290L:
+			return int(self.n/10 *2 )
+		elif self.n >= 1290L and self.n <= 2200L:
+			return int(self.n/10 *3 )
+		elif self.n >= 2200L and self.n <= 8800L:
+			return int(self.n/10 *4 )
 
 	def calculate_probability(self,adjustment=0):
 		precision = 8
@@ -43,28 +52,25 @@ class Probability():
 		
 		if not self.isTooBig:
 			result = (numerator/denomenator)
+			ipdb.set_trace()
 			return format(result,'.90f')
 		else:
 			normalize_factor = len(str(numerator))-precision
+			
 			try:
 				numerator = round(numerator/10**(normalize_factor))
 			except:
+				# cheap hack to get around datatype limitation
 				numerator = float(str(numerator)[:-normalize_factor])
 			
-			if self.n <= 900L:
-				adjustment = int(self.n/10)
-			elif self.n >= 900L and self.n < 1290L:
-				adjustment = int(self.n/10 *2 )
-			elif self.n >= 1290L and self.n <= 2200L:
-				adjustment = int(self.n/10 *3 )
-			elif self.n >= 2200L and self.n <= 8800L:
-				adjustment = int(self.n/10 *4 )
-
-
+			# stronger truncation of digits from denomenator
+			adjustment = adjust()
 			normalize_factor +=adjustment
+			
 			try:
 				denomenator = denomenator / 10**(normalize_factor)
 			except:
+				# cheap hack to get around datatype limitation
 				denomenator = long(str(denomenator)[:-normalize_factor])
 			
 			try:
