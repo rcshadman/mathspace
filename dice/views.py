@@ -1,7 +1,6 @@
 from __future__ import division
-from django.http import JsonResponse
 from . import prob
-from django.shortcuts import render, redirect, HttpResponse, HttpResponseRedirect, get_object_or_404
+from django.shortcuts import render
 import ipdb
 
 
@@ -11,7 +10,6 @@ def dice(request):
 		return render(request, "index.html",context)
 	
 	if request.method == 'POST':
-		# ipdb.set_trace()
 		sides = long(request.POST['sides'])
 		probability = prob.Probability(sides=sides)
 		res = str(probability.calculate_probability())
