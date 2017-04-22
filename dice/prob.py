@@ -1,5 +1,5 @@
 from __future__ import division
-import sys,ipdb,numpy
+import sys,ipdb
 from decimal import Decimal
 sys.setrecursionlimit(10000000)
 
