@@ -129,6 +129,10 @@ Formulae
 
 	P(E) = (n-1)! / n^n-1
 
+	we can use logs as well, but that would require us to use, math library.
+
+
+
 
 The Real Problems
 -----------------------------------
@@ -224,7 +228,52 @@ I have chosen second question mainly because, 1st and 3rd are too frequently ask
 2nd problem , I couldnt figure out the function being used to generate the values for string.
 
 
+Alternate Solution ( Although we are not using this solution)
+----------------------------------------------------------
 
+    P(E) = n!/n^n
+    log(P) = log( n! / n^n )
+
+    log(p) = log(n!) - log(n^n)
+    
+    log(p) = -nlog(n) + log(n!) 
+    
+    log(p) = log(n x (n-1) x (n-2) x (n-3) x (n-4) x (n-5) .... 1) - nlog(n)
+    
+    log(p) = -nlog(n) + log(n) + log(n-1) + log(n-2) + log(n-3) + log(n-4) + log(n-5) ..... log(1)
+
+    log(p) = (sum of series)
+
+    10^(sum of series) = p
+
+Python function for this method
+-----------------------------------
+    import math
+
+    def func(n):
+    
+        exponential_part = -n*math.log10(n)
+        
+        factorial_part = reduce(lambda x,y: x+y,[math.log10(each) for each in range(1,n)])
+        
+        sum = exponential_part + factorial_part
+        
+        # Admustment technique
+        # compilor works well till n = 736 , so we make that as a base value and convert all the
+        # values bigger than n > 736 in terms of the base value.
+        # ie multiple * baseValue + fraction
+        
+        # n = 736
+        base = -320.67503848095225
+        baseValue = pow(10,base)
+
+        if sum < base:
+            multiple = int(sum/base)
+            fraction = sum - int(sum/base)
+            fractionValue = pow(10,fraction)
+            return '{} X {} + {}'.format(multiple,baseValue,fraction)
+        else:
+            return = str(pow(10,sum))
 
 
 

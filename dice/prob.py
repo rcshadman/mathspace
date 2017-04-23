@@ -1,8 +1,13 @@
+""" 
+please  read comments for complete derivation
+P(E) = (n-1)! / n^n-1
+
+"""
+
 from __future__ import division
 import sys,ipdb
 from decimal import Decimal
 sys.setrecursionlimit(10000000)
-
 class Probability():
 	def __init__(self,sides=0):
 		self.isTooBig = False
