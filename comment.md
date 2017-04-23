@@ -14,13 +14,16 @@ Instead of googling  probability's formulas,lets derive our equation using a cru
 
 So let's start with the 2 sided die,
 
-	side = 2 ie {1,2}
+side = 2
+---------
+
+	 ie {1,2}
 
 	number of rolls = 2 
 
 	all possibilities or samples = 2^2 =4 ie {11,12,21,22}
 
-	number of ways dinstinct face can appear = in 2 ways = 2! = 2 ie {12,21}
+	number of ways distinct face can appear = in 2 ways = 2! = 2 ie {12,21}
 
 	Probability = 2!/2^2
 
@@ -44,7 +47,7 @@ side = 3
 
 	ie [ 111,112,113, 121,122,123, 131,132,133, 211,212,213, 221,222,223, 231,232,233, 311,312,313, 321,322,323, 331,332,333 ] 
 
-	fnumber of ways dinstinct face can appear 3! = 6 ie [ 123,132,213,231,312,321 ] 
+	fnumber of ways distinct face can appear 3! = 6 ie [ 123,132,213,231,312,321 ] 
 
 	probability = 3!/3^3
 
@@ -64,7 +67,7 @@ side = 4
 
 	all possibilities or samples = 4^4 = 16 
 
-	number of ways dinstinct face can appear = 4! = 24 
+	number of ways distinct face can appear = 4! = 24 
 
 	ie [ 1234,1243,1324,1342,1423,1432, 2134,2143,2314,2341,2413,2431, 3124,3142,3214,3241,3412,3421 ..... ] 
 
@@ -85,7 +88,7 @@ side = 5
 
 	sample = 5^5 = 25 
 
-	number of ways dinstinct face can appear = 5! 
+	number of ways distinct face can appear = 5! 
 
 	probability = 5!/5^5
 
@@ -108,7 +111,7 @@ sides = n
 
 	sample = n^n 
 
-	number of ways dinstinct face can appear = n! 
+	number of ways distinct face can appear = n! 
 
 	probability = n!/n^n
 
@@ -137,7 +140,8 @@ Solution
 
 Lets approach the problem from a layman's perspective.
 
-Do we really need to divide the such huge numbers?
+Do we really need to divide the such huge numbers? 
+
 
 FACT 1
 -------
