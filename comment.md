@@ -213,23 +213,10 @@ This method might not be mathematically accurate but will give us a rough estima
 significant digits.
 
 
-Conclusion
------------
-
-So is this approach correct ? I am not sure, but if a small hack can save time and effort,
-I would use till it cracks.
 
 
-Comment
----------
-
-I have chosen second question mainly because, 1st and 3rd are too frequently asked problems. 
-1st problem can solved using Dynamic programming (although doesnt cover corner cases) or recursive DFS method (lenghty).
-2nd problem , I couldnt figure out the function being used to generate the values for string.
-
-
-Alternate Solution ( Although we are not using this solution)
-----------------------------------------------------------
+Alternate Solution using Logarithms, for very large numbers
+------------------------------------------------------------
 
     P(E) = n!/n^n
     log(P) = log( n! / n^n )
@@ -276,6 +263,19 @@ Python function for this method
             return = str(pow(10,sum))
 
 
+Conclusion
+-----------
+
+So is this approach correct ? I am not sure, but if a small hack can save time and effort,
+I would use till it cracks.
+
+
+Comment
+---------
+
+I have chosen second question mainly because, 1st and 3rd are too frequently asked problems. 
+1st problem can solved using Dynamic programming (although doesnt cover corner cases) or recursive DFS method (lenghty).
+2nd problem , I couldnt figure out the function being used to generate the values for string.
 
 
 
