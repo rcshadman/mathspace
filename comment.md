@@ -247,7 +247,7 @@ Python function for this method
         
         # Admustment technique
         # compilor works well till n = 736 , so we make that as a base value and convert all the
-        # values bigger than n > 736 in terms of the base value.
+        # values bigger than n > 736 , will be express in terms of the base value.
         # ie multiple * baseValue + fraction
         
         # n = 736
