@@ -275,7 +275,7 @@ Comment
 
 I have chosen second question mainly because, 1st and 3rd are too frequently asked problems. 
 1st problem can solved using Dynamic programming (although doesnt cover corner cases) or recursive DFS method (lenghty).
-2nd problem , I couldnt figure out the function being used to generate the values for string.
+3rd problem , I couldnt figure out the function being used to generate the values for string.
 
 
 
